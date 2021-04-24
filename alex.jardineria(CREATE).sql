@@ -1,9 +1,9 @@
 #Borro base de datos si existe.
-DROP Database IF EXISTS ASBjardineria2;
+DROP Database IF EXISTS jardineria2;
 #Creo base de datos
-CREATE database ASBjardineria2;
+CREATE database jardineria2;
 #Selecciona la base de datos
-USE ASBjardineria2;
+USE jardineria2;
 #Borra la tabla si existe
 DROP table IF EXISTS Oficinas;
 CREATE TABLE Oficinas (
@@ -165,12 +165,12 @@ ALTER TABLE GamasProductos RENAME TO Gama;
 SHOW tables;
 #Creación de usuarios y adjudicación de privilegios:
 #Eliminamos los usuarios en caso de que existan.
-DROP USER 'adminASB'@'localhost';
-DROP USER 'consultASB'@'localhost';
+DROP USER 'admin'@'localhost';
+DROP USER 'consult'@'localhost';
 FLUSH PRIVILEGES;
 #Creamos los usuarios (admin con todos los privilegios y consult con solo privilegios para seleccionar) y adjudicamos los privilegios. Flusheamos para actualizar.
-CREATE USER 'adminASB'@'localhost' IDENTIFIED BY 'jamonyork';
-CREATE USER 'consultASB'@'localhost' IDENTIFIED BY 'pan';
-GRANT ALL PRIVILEGES ON ASBjardineria2.* TO 'adminASB'@'localhost';
-GRANT SELECT ON ASBjardineria2.* TO 'consultASB'@'localhost';
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'jamonyork';
+CREATE USER 'consult'@'localhost' IDENTIFIED BY 'pan';
+GRANT ALL PRIVILEGES ON jardineria2.* TO 'admin'@'localhost';
+GRANT SELECT ON jardineria2.* TO 'consult'@'localhost';
 FLUSH PRIVILEGES;
