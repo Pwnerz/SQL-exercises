@@ -1,6 +1,6 @@
 /*1.Crear una tabla temporal llamada “TempClientes” que contenga todos los datos de la tabla Clientes.*/
 CREATE TABLE TempClientes AS SELECT * FROM Clientes; 
-INSERT TempClientes SELECT * FROM Clientes; 
+INSERT INTO TempClientes SELECT * FROM Clientes; 
 /*2.Desactivar el autocommit.*/
 SET AUTOCOMMIT=0;
 /*3.Consultar el número de registros de la tabla.*/
